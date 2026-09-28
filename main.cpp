@@ -1,20 +1,40 @@
-#include<iostream>
+#include <iostream>
 
-int main() {
-    double x = 0;
-    double y = 0;
-    std::cin >> x;
-    std::cin >> y;
-    std::string op = "hello world";
-    std::cout << x << "\n";
-    std::cout << op << "\n";
-    return 0;
+void input(std::string &op,  double numbers[2])
+{
+    std::cout << "opetation:";
+    std::cin >> op;
+    std::cout << "x:";
+    std::cin >> numbers[0];
+    std::cout << "y:";
+    std::cin >> numbers[1];
 }
 
-void  input(std::string& op,double &x,double &y){
-    std::cout << "operation"
-    std::cin >> op;
-    std::cin >> op;
-    std::cin >> op;
+void calculate(const std::string &op, double numbers[2])
+{
+    if (op == "+")
+    {
+        std::cout << numbers[0] + numbers[1] << "\n";
+    }
+    else if (op == "-")
+    {
+        std::cout << numbers[0] - numbers[1]<< "\n";
+    }
+    else
+    {
+        std::cout << "unknown operation.\n";
+    }
+}
 
-}   
+int main()
+{
+    while (true)
+    {
+        double numbers[2];
+        std::string op;
+
+        input(op, numbers);
+        calculate(op, numbers);
+    }
+    return 0;
+}
