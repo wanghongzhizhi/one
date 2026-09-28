@@ -14,6 +14,6 @@ int main() {
 void  input(std::string& op,double &x,double &y){
     std::cout << "operation"
     std::cin >> op;
-
+    std::cin >> op;
 
 }   
